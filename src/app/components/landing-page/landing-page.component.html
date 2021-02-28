@@ -1,0 +1,52 @@
+
+<div class="body-wrap boxed-container">
+    
+ <div class="welcome">WELCOME TO LANDING PAGE</div>
+ <div class="note">Note that the first object on opening this page is hardcoded as an initial state for the sake of testing</div>
+   <div class="row">
+      <div class="details" *ngFor="let cardData of cardDatas | async">
+        <div class="seperation"  >
+         <div class="name">Name:</div>
+         <div class="fullname">{{ cardData.name }}</div>
+      </div>
+
+      <div class="seperation"  >
+        <div class="name">Card Number:</div>
+        <div class="fullname">{{ cardData.cardNumber }}</div>
+     </div>
+
+     <div class="seperation"  >
+        <div class="name">Amount:</div>
+        <div class="fullname">{{ cardData.amount }}</div>
+     </div>
+
+     <div class="seperation"  >
+        <div class="name">Expiry Date :</div>
+        <div class="fullname">{{ cardData.date }}</div>
+     </div>
+
+     <div class="seperation"  >
+        <div class="name">Security Code:</div>
+        <div class="fullname">{{ cardData.securityCode }}</div>
+     </div>
+     </div>
+
+     
+
+      <div class="b">
+        <button type="submit" class="paybtn" (click)="gotoCard()" > Card payment Page
+        </button>
+    </div>
+   </div>
+    
+    <!-- <ul>
+      <li *ngFor="let cardData of cardDatas | async">
+        <div>{{ cardData.name }}</div>
+        <div>{{ cardData.cardNumber }}</div>
+        <div>{{ cardData.amount }}</div>
+        <div>{{ cardData.date._d | date:"MM/dd/yy" }}</div>
+        <div>{{ cardData.securityCode }}</div>
+      </li>
+    </ul> -->
+  <!-- <app-authlogin></app-authlogin> -->
+  </div>

@@ -1,0 +1,90 @@
+
+<div class="limiter">
+  <div class="container-contain">
+    <div class="wrap-contain">
+
+        <div class="title">
+        Pay Invoice
+        </div>
+
+
+        <form [formGroup] = "refCodeform" (ngSubmit)="pay()" >
+
+        <div class="inputsdiv" >
+          <div class="detailsasteriks">
+            <div class="name">Enter Name On Card </div>
+            <div class="asteriks">*</div>
+          </div>
+          <input type="email" placeholder="" formControlName = "name"  class="input"  >
+            <div class="error">{{nameError()}}</div>
+          <span class="focus-input100"></span>
+         
+        </div> 
+
+        <div class="inputsdiv" >
+          <div class="detailsasteriks">
+            <div class="name">Enter Card Number</div>
+            <div class="asteriks">*</div>
+          </div>
+          <input type="text" placeholder="" formControlName = "cardNumber"  class="input " >
+          <div class="error">{{cardNumberError()}}</div>
+          <span class="focus-input100"></span>
+         
+        </div> 
+
+      
+        
+
+        <div class="inputsdiv" >
+          <div class="detailsasteriks">
+            <div class="name">Amount</div>
+            <div class="asteriks">*</div>
+          </div>
+          <input type="number" placeholder="" formControlName = "amount"  class="input" >
+          <div class="error">{{amountError()}}</div>
+          <span class="focus-input100"></span>
+         
+        </div> 
+
+        <div class="seperate">
+<div class="inputsdiv">
+        <div class="detailsasteriks">
+          <div class="name">Expiry Date</div>
+          <div class="asteriks">*</div>
+        </div>   
+    <div class="datebox">
+         <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="" formControlName="date" >
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+       
+
+      </div>   <div class="error">{{dateError()}}</div>     
+    </div> 
+
+    <div class="inputsdiv" >
+      <div class="detailsasteriks">
+        <div class="name">Security Code</div>
+        <div class="asteriks"></div>
+      </div>
+      <input type="text" placeholder="" formControlName = "securityCode"  class="input" >
+      <span class="focus-input100"></span>
+     
+    </div> 
+  </div>
+
+    
+        <div class="form-btn">
+          <button type="submit" class="paybtn"  [disabled] ="!refCodeform.valid"    [ngStyle]="{'background-color':refCodeform.valid  ? 'green' : '#D1FFD3' }">pay
+  </button>
+        </div>
+        </form>
+
+      
+
+       
+     
+    </div>
+  </div>
+</div>
